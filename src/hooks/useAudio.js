@@ -3,10 +3,10 @@ import * as Tone from "tone";
 import { ROWS } from "../constants";
 
 const SAMPLE_PATHS = {
-  kick:     "/samples/kick.wav",
-  snare:    "/samples/snare.wav",
-  clap:     "/samples/clap.wav",
-  "hi-hat": "/samples/hihat.wav",
+  kick:     `${process.env.PUBLIC_URL}/samples/kick.mp3`,
+  snare:    `${process.env.PUBLIC_URL}/samples/snare.mp3`,
+  clap:     `${process.env.PUBLIC_URL}/samples/clap.mp3`,
+  "hi-hat": `${process.env.PUBLIC_URL}/samples/hihat.mp3`,
 };
 
 export function useAudio() {
@@ -19,6 +19,16 @@ export function useAudio() {
     if (readyRef.current) return;
 
     await Tone.start();
+
+    // add this block right after await Tone.start()
+    const testLoad = async (path) => {
+      const res = await fetch(path);
+      console.log(path, res.status, res.headers.get("content-type"));
+    };
+    await testLoad("/samples/kick.mp3");
+    await testLoad("/samples/snare.mp3");
+    await testLoad("/samples/clap.mp3");
+    await testLoad("/samples/hihat.mp3");
 
     const limiter = new Tone.Limiter(-2).toDestination();
     limiterRef.current = limiter;
