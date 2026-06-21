@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/magic-tiles/static/css/main.453541e3.css",
-    "main.js": "/magic-tiles/static/js/main.1783ab80.js",
+    "main.js": "/magic-tiles/static/js/main.5f02cbb3.js",
     "index.html": "/magic-tiles/index.html",
     "main.453541e3.css.map": "/magic-tiles/static/css/main.453541e3.css.map",
-    "main.1783ab80.js.map": "/magic-tiles/static/js/main.1783ab80.js.map"
+    "main.5f02cbb3.js.map": "/magic-tiles/static/js/main.5f02cbb3.js.map"
   },
   "entrypoints": [
     "static/css/main.453541e3.css",
-    "static/js/main.1783ab80.js"
+    "static/js/main.5f02cbb3.js"
   ]
 }
